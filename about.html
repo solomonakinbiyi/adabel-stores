@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRAND STORY &amp; ATELIER &mdash; ADABEL STORES</title>
+  <meta name="description" content="Discover the origins, athletic fashion ethos, and bespoke craftsmanship of Adabel Stores. Engineered silhouettes meets relentless cultural attitude.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* About Page Custom Layouts */
+    .story-hero {
+      position: relative;
+      padding: 6.5rem 0 5rem;
+      background: radial-gradient(circle at 70% 30%, #17171e 0%, #060608 80%);
+      border-bottom: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+
+    .timeline-wrap {
+      position: relative;
+      margin: 4rem 0;
+      padding-left: 2rem;
+      border-left: 2px solid var(--border-bold);
+    }
+
+    .timeline-node {
+      position: relative;
+      margin-bottom: 3.5rem;
+    }
+
+    .timeline-node::before {
+      content: '';
+      position: absolute;
+      left: -2.45rem;
+      top: 0.25rem;
+      width: 14px;
+      height: 14px;
+      background: var(--accent-electric);
+      border: 3px solid #000;
+      border-radius: 50%;
+    }
+
+    .timeline-year {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent-electric);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .craft-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      margin: 5rem 0;
+    }
+
+    .craft-grid.reverse {
+      direction: rtl;
+    }
+
+    .craft-grid.reverse > * {
+      direction: ltr;
+    }
+
+    .craft-image-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-bold);
+      aspect-ratio: 16 / 11;
+      background: #141417;
+    }
+
+    .craft-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.1);
+      transition: transform 0.6s ease;
+    }
+
+    .craft-image-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .stat-counter-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      margin: 4rem 0;
+    }
+
+    .stat-counter-item {
+      text-align: center;
+    }
+
+    .stat-counter-number {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-counter-number span {
+      color: var(--accent-electric);
+    }
+
+    .stat-counter-label {
+      font-family: var(--font-sub);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+    }
+
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-sub);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      background: #111114;
+      border: 1px solid var(--border-bold);
+      padding: 0.85rem 1.15rem;
+      color: #ffffff;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--accent-electric);
+    }
+
+    @media (max-width: 900px) {
+      .craft-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .craft-grid.reverse {
+        direction: ltr;
+      }
+      .stat-counter-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .contact-form-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-ticker" aria-label="Announcement">
+    <div class="ticker-content">
+      <span>FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+      <span>&bull;</span>
+      <span>THE PROTO-7 CAPSULE COLLECTION IS LIVE</span>
+      <span>&bull;</span>
+      <span>ENGINEERED FASHION MEETS PERFORMANCE CRAFT</span>
+      <span>&bull;</span>
+      <span>JOIN ADABEL CLUB FOR 15% OFF YOUR FIRST DROP</span>
+      <span>&bull;</span>
+      <span>FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+      <span>&bull;</span>
+      <span>THE PROTO-7 CAPSULE COLLECTION IS LIVE</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="Adabel Stores Home">
+        <div class="logo-icon">
+          <span class="logo-bar"></span>
+          <span class="logo-bar"></span>
+          <span class="logo-bar"></span>
+        </div>
+        <span>ADABEL</span>
+        <span class="logo-sub">STUDIO</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="catalog.html" class="nav-link">Shop &amp; Collection</a></li>
+          <li><a href="about.html" class="nav-link active">Brand Story</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" onclick="toggleCart()" aria-label="View Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Brand Story Hero -->
+    <section class="story-hero">
+      <div class="brand-stripes-diagonal">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="container" style="position: relative; z-index: 2;">
+        <span class="badge-tag">GENESIS &amp; IDENTITY // ADABEL STORES</span>
+        <h1 class="hero-title" style="margin-bottom: 1rem; font-size: clamp(3rem, 6.5vw, 5.5rem);">
+          WHERE ATHLETIC DNA <br>
+          <span class="highlight-text">SHAPES COUTURE</span>
+        </h1>
+        <p style="color: var(--text-secondary); max-width: 680px; font-size: 1.15rem; line-height: 1.6;">
+          Adabel was founded on a singular conviction: genuine high fashion shouldn't merely hang in a gallery—it must endure the stadium tunnel, the city rainfall, and the ceaseless motion of global creators.
+        </p>
+      </div>
+    </section>
+
+    <!-- Stat Counter Bar -->
+    <section class="container">
+      <div class="stat-counter-grid">
+        <div class="stat-counter-item">
+          <div class="stat-counter-number">520<span>G</span></div>
+          <div class="stat-counter-label">Heavyweight Gram Fabric</div>
+        </div>
+        <div class="stat-counter-item">
+          <div class="stat-counter-number">100<span>%</span></div>
+          <div class="stat-counter-label">Bespoke Technical Patterning</div>
+        </div>
+        <div class="stat-counter-item">
+          <div class="stat-counter-number">48<span>K</span></div>
+          <div class="stat-counter-label">Global Community Club</div>
+        </div>
+        <div class="stat-counter-item">
+          <div class="stat-counter-number">03<span>&times;</span></div>
+          <div class="stat-counter-label">Iconic Stripe Signature Line</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Craftsmanship Showcase -->
+    <section class="container">
+      
+      <!-- Section 1 -->
+      <div class="craft-grid">
+        <div>
+          <span class="badge-tag">CHAPTER 01</span>
+          <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); text-transform: uppercase; margin-bottom: 1.25rem;">
+            THE TENSION OF SPORT &amp; DRAPING
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem;">
+            Inspired by the iconic monochrome geometry of Adidas archival tracksuits, Adabel dissects conventional streetwear patterns. We replace loose cuts with articulated kinetic joints, engineered bar-tack reinforcements, and tactile three-stripe seams.
+          </p>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7;">
+            Each garment undergoes rigorous tensile stress tests before release. We build outerwear not just to look striking in high-contrast editorial photography, but to perform under harsh real-world conditions.
+          </p>
+        </div>
+        <div class="craft-image-frame">
+          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80" alt="Fashion design cutting and tailoring studio">
+        </div>
+      </div>
+
+      <!-- Section 2 (Reversed) -->
+      <div class="craft-grid reverse">
+        <div>
+          <span class="badge-tag">CHAPTER 02</span>
+          <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); text-transform: uppercase; margin-bottom: 1.25rem;">
+            SUSTAINABLE PERFORMANCE MATERIALS
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem;">
+            Our technical shells are constructed using 100% ocean-reclaimed polyamide and PFC-free water-repellent coatings. Every button and magnetic clasp is manufactured from recycled aeronautic-grade aluminum alloy.
+          </p>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7;">
+            We operate in limited capsule runs to eliminate inventory waste and preserve the rarity of every Adabel piece owned by our collectors.
+          </p>
+        </div>
+        <div class="craft-image-frame">
+          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=80" alt="Modern model wearing technical garment">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Brand Milestones Timeline -->
+    <section class="section" style="background: #09090c; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container-narrow">
+        <div class="section-head" style="border-bottom: none; margin-bottom: 1rem;">
+          <div>
+            <div class="badge-tag">CHRONOLOGY</div>
+            <h2 class="section-title">THE ARCHIVE PROGRESSION</h2>
+          </div>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline-node">
+            <div class="timeline-year">2023 // THE FIRST EXPERIMENT</div>
+            <h3 style="font-family: var(--font-sub); font-size: 1.2rem; margin-bottom: 0.5rem; text-transform: uppercase;">
+              Underground Atelier Launch
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Adabel begins as a closed-door bespoke design unit custom-crafting performance tour jackets for electronic music pioneers and underground football collectives.
+            </p>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-year">2024 // MONOCHROME MANIFESTO</div>
+            <h3 style="font-family: var(--font-sub); font-size: 1.2rem; margin-bottom: 0.5rem; text-transform: uppercase;">
+              The First Public Capsule Drop
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Release of the 520 GSM Monolith collection in Tokyo and London. 300 pieces sold out within 14 minutes, cementing Adabel's signature triple-stripe silhouette.
+            </p>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-year">2025 // HYBRID RUNNER SNEAKER DEBUT</div>
+            <h3 style="font-family: var(--font-sub); font-size: 1.2rem; margin-bottom: 0.5rem; text-transform: uppercase;">
+              Footwear Division Engineering
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Partnering with specialized Portuguese cobblers, the brand delivers its inaugural kinetic runner series incorporating PrimeKnit weaving and responsive foam dampers.
+            </p>
+          </div>
+
+          <div class="timeline-node" style="margin-bottom: 0;">
+            <div class="timeline-year">2026 // THE PROTO-7 ERA</div>
+            <h3 style="font-family: var(--font-sub); font-size: 1.2rem; margin-bottom: 0.5rem; text-transform: uppercase;">
+              Global Flagship &amp; Direct Ateliers
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Unveiling the full modern online flagship store. Delivering worldwide express bespoke fashion drops with solar neon accents and sustainable modular tailoring.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bespoke Inquiry & Contact Section -->
+    <section class="section" id="contact-form">
+      <div class="container-narrow">
+        <div class="section-head">
+          <div>
+            <div class="badge-tag">COMMISSIONS &amp; INQUIRIES</div>
+            <h2 class="section-title">CONNECT WITH THE ATELIER</h2>
+            <p class="section-subtitle">
+              Whether you require bespoke red-carpet tailoring, styling loans, or customer support for an existing drop order.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form-grid">
+          <div>
+            <h3 style="font-family: var(--font-display); font-size: 1.4rem; text-transform: uppercase; margin-bottom: 1rem;">
+              HEADQUARTERS
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+              Adabel Design Haus<br>
+              42 Kronenstrasse, Mitte District<br>
+              Berlin &bull; London &bull; Lagos
+            </p>
+
+            <h4 style="font-family: var(--font-sub); font-size: 0.85rem; text-transform: uppercase; color: var(--accent-electric); margin-bottom: 0.5rem;">
+              DIRECT ATELIER EMAIL
+            </h4>
+            <p style="color: #ffffff; font-family: var(--font-sub); font-weight: 700; margin-bottom: 2rem;">
+              studio@adabel-stores.design
+            </p>
+
+            <h4 style="font-family: var(--font-sub); font-size: 0.85rem; text-transform: uppercase; color: var(--accent-electric); margin-bottom: 0.5rem;">
+              HOURS OF OPERATION
+            </h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+              Monday &ndash; Friday: 09:00 &ndash; 19:00 CET<br>
+              Saturday: Private Appointments Only
+            </p>
+          </div>
+
+          <form id="atelier-inquiry-form" onsubmit="event.preventDefault(); showToast('Inquiry submitted to the Adabel Atelier. We will reply within 24h.'); this.reset();">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="inq-name">Full Name *</label>
+                <input type="text" id="inq-name" required class="form-input" placeholder="e.g. Marcus Miller">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inq-email">Email Address *</label>
+                <input type="email" id="inq-email" required class="form-input" placeholder="e.g. marcus@domain.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inq-subject">Inquiry Nature</label>
+              <select id="inq-subject" class="form-input" style="cursor: pointer;">
+                <option value="bespoke">Bespoke Design &amp; Custom Fitting</option>
+                <option value="order">Order &amp; Capsule Drop Support</option>
+                <option value="press">Editorial Press &amp; Styling Loan</option>
+                <option value="retail">Wholesale &amp; Retail Partnership</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inq-message">Message / Specifications *</label>
+              <textarea id="inq-message" rows="5" required class="form-textarea" placeholder="Detail your project or requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-accent" style="width: 100%;">
+              TRANSMIT INQUIRY &rarr;
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">
+              <span class="logo-bar"></span>
+              <span class="logo-bar"></span>
+              <span class="logo-bar"></span>
+            </div>
+            <span>ADABEL</span>
+          </a>
+          <p class="footer-brand-desc">
+            Adabel Stores is an avant-garde fashion design atelier inspired by athletic performance heritage, high streetwear, and structural tailoring.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">COLLECTIONS</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html?cat=Outerwear" class="footer-link">Technical Outerwear</a></li>
+            <li><a href="catalog.html?cat=Footwear" class="footer-link">Signature Footwear</a></li>
+            <li><a href="catalog.html?cat=Sweatshirts" class="footer-link">Heavyweight Hoodies</a></li>
+            <li><a href="catalog.html?cat=Bottoms" class="footer-link">Utility Cargo Bottoms</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home Showcase</a></li>
+            <li><a href="catalog.html" class="footer-link">Shop All Drops</a></li>
+            <li><a href="about.html" class="footer-link">Brand Philosophy &amp; Story</a></li>
+            <li><a href="about.html#contact-form" class="footer-link">Bespoke Design Inquiry</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">THE NEWSLETTER</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            First access to capsule collaborations and limited drops.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="YOUR EMAIL" required class="newsletter-input" aria-label="Footer newsletter email">
+            <button type="submit" class="newsletter-btn">JOIN</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ADABEL STORES LTD. ALL RIGHTS RESERVED.</div>
+        <div style="display: flex; gap: 2rem;">
+          <a href="#" style="color: var(--text-muted); text-decoration: none;">PRIVACY POLICY</a>
+          <a href="#" style="color: var(--text-muted); text-decoration: none;">TERMS OF SERVICE</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer Overlay -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="if(event.target === this) toggleCart(false)">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title">
+          <span>SHOPPING BAG</span>
+          <span class="brand-stripes-mini" style="margin-left: 8px;"><span></span><span></span><span></span></span>
+        </div>
+        <button class="icon-btn" onclick="toggleCart(false)" aria-label="Close cart">&times;</button>
+      </div>
+
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div class="cart-subtotal-row">
+          <span>SUBTOTAL</span>
+          <span class="cart-subtotal-val" id="cart-subtotal-val">$0.00</span>
+        </div>
+        <button class="btn btn-accent" style="width: 100%; margin-bottom: 0.75rem;" onclick="showToast('Proceeding to checkout...'); toggleCart(false);">
+          CHECKOUT NOW &rarr;
+        </button>
+        <p style="font-size: 0.7rem; color: var(--text-muted); text-align: center;">
+          Complimentary carbon-neutral express shipping on this order.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADABEL STORES &mdash; Engineered Fashion &amp; Streetwear</title>
+  <meta name="description" content="Adabel Stores: High-performance fashion design inspired by architectural silhouettes and athletic heritage. Discover jackets, footwear, hoodies, and cargo designs.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-ticker" aria-label="Announcement">
+    <div class="ticker-content">
+      <span>FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+      <span>&bull;</span>
+      <span>THE PROTO-7 CAPSULE COLLECTION IS LIVE</span>
+      <span>&bull;</span>
+      <span>ENGINEERED FASHION MEETS PERFORMANCE CRAFT</span>
+      <span>&bull;</span>
+      <span>JOIN ADABEL CLUB FOR 15% OFF YOUR FIRST DROP</span>
+      <span>&bull;</span>
+      <span>FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+      <span>&bull;</span>
+      <span>THE PROTO-7 CAPSULE COLLECTION IS LIVE</span>
+      <span>&bull;</span>
+      <span>ENGINEERED FASHION MEETS PERFORMANCE CRAFT</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="Adabel Stores Home">
+        <div class="logo-icon">
+          <span class="logo-bar"></span>
+          <span class="logo-bar"></span>
+          <span class="logo-bar"></span>
+        </div>
+        <span>ADABEL</span>
+        <span class="logo-sub">STUDIO</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="catalog.html" class="nav-link">Shop &amp; Collection</a></li>
+          <li><a href="about.html" class="nav-link">Brand Story</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" onclick="toggleCart()" aria-label="View Shopping Bag" id="cart-button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge">0</span>
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section with Adidas 3-Stripe motif -->
+    <section class="hero">
+      <div class="brand-stripes-diagonal">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="brand-stripes-mini"><span></span><span></span><span></span></span>
+            NEW GENERATION STREETWEAR &bull; 2026 DROP
+          </div>
+          <h1 class="hero-title">
+            REDEFINE <br>
+            <span class="outline-text">THE STREETS.</span>
+            <span class="highlight-text">ADABEL FASHION</span>
+          </h1>
+          <p class="hero-desc">
+            Where high-performance athletic heritage meets precision bespoke tailoring. Built for the modern pioneer demanding form, function, and fearless attitude.
+          </p>
+          <div class="hero-actions">
+            <a href="catalog.html" class="btn btn-accent" id="hero-cta-shop">
+              Shop The Drop
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="about.html" class="btn btn-outline" id="hero-cta-story">
+              Our Design Philosophy
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-poster-card">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80" alt="Adabel High-Fashion Streetwear Model">
+            <div class="hero-poster-overlay">
+              <span class="badge-tag">SERIES 07 // AUTUMN</span>
+              <div>
+                <p style="font-family: var(--font-sub); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-electric); margin-bottom: 0.25rem;">
+                  Featured Silhouette
+                </p>
+                <h3 style="font-family: var(--font-display); font-size: 1.4rem; text-transform: uppercase; color: #fff;">
+                  PROTO-7 KINETIC PARKA
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="hero-floating-badge">
+            <div class="badge-val">03</div>
+            <div class="badge-label">SIGNATURE STRIPE RE-ENGINEERED</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto / Core Pillars -->
+    <section class="manifesto-banner">
+      <div class="container manifesto-grid">
+        <div class="manifesto-item">
+          <div class="manifesto-num">01 // ARCHITECTURAL</div>
+          <h3 class="manifesto-heading">Structured Precision</h3>
+          <p class="manifesto-text">
+            Every garment begins with technical drafting. Precision-cut lines, reinforced seam seals, and balanced ergonomics inspired by iconic athletics.
+          </p>
+        </div>
+        <div class="manifesto-item">
+          <div class="manifesto-num">02 // PERFORMANCE</div>
+          <h3 class="manifesto-heading">Extreme Durability</h3>
+          <p class="manifesto-text">
+            From 520 GSM loopback French terry to Cordura weatherproof weaves, we manufacture fashion that endures asphalt, elements, and time.
+          </p>
+        </div>
+        <div class="manifesto-item">
+          <div class="manifesto-num">03 // UNCOMPROMISING</div>
+          <h3 class="manifesto-heading">Subcultural Edge</h3>
+          <p class="manifesto-text">
+            Born from stadium culture, club environments, and high-fashion ateliers. Adabel defines the wardrobe of tomorrow's creative vanguard.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Featured Drop -->
+    <section class="section" id="featured-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="badge-tag">HIGHLIGHTS</div>
+            <h2 class="section-title">FEATURED SILHOUETTES</h2>
+            <p class="section-subtitle">
+              The flagship pieces commanding attention right now. Engineered materials, bold cuts, and clean contrast lines.
+            </p>
+          </div>
+          <a href="catalog.html" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.75rem 1.5rem;">
+            View Full Roster &rarr;
+          </a>
+        </div>
+
+        <div class="products-grid" id="home-products-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Lookbook Mosaic Showcase -->
+    <section class="section" style="background: #060608; border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="badge-tag">EDITORIAL</div>
+            <h2 class="section-title">IN SITU // CITY LOOKBOOK</h2>
+            <p class="section-subtitle">
+              Captured on the streets of Berlin, Tokyo, and London. Style calibrated for motion and presence.
+            </p>
+          </div>
+          <span style="font-family: var(--font-sub); font-size: 0.85rem; color: var(--accent-electric); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
+            CAMPAIGN 2026
+          </span>
+        </div>
+
+        <div class="lookbook-grid">
+          <div class="lookbook-card span-7">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80" alt="Editorial Fashion Trench">
+            <div class="lookbook-caption">
+              <div>
+                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-electric); text-transform: uppercase;">LOOK 01</span>
+                <h3 class="lookbook-title">MONOCHROME UTILITY</h3>
+              </div>
+              <a href="catalog.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Explore</a>
+            </div>
+          </div>
+          <div class="lookbook-card span-5">
+            <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80" alt="Athletic Denim Streetwear">
+            <div class="lookbook-caption">
+              <div>
+                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-electric); text-transform: uppercase;">LOOK 02</span>
+                <h3 class="lookbook-title">HEAVYWEIGHT DENIM &bull; CORE</h3>
+              </div>
+              <a href="catalog.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Explore</a>
+            </div>
+          </div>
+          <div class="lookbook-card span-4">
+            <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=900&q=80" alt="Athletic Footwear Culture">
+            <div class="lookbook-caption">
+              <div>
+                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-electric); text-transform: uppercase;">LOOK 03</span>
+                <h3 class="lookbook-title">PAVEMENT RUNNERS</h3>
+              </div>
+              <a href="catalog.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Explore</a>
+            </div>
+          </div>
+          <div class="lookbook-card span-8">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80" alt="Model walking in tailored athletic coat">
+            <div class="lookbook-caption">
+              <div>
+                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-electric); text-transform: uppercase;">LOOK 04</span>
+                <h3 class="lookbook-title">ASYMMETRIC LINE DRAPING</h3>
+              </div>
+              <a href="catalog.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join the Club Banner -->
+    <section class="section" style="background: radial-gradient(circle at 50% 50%, #17171c 0%, #08080a 100%); border-top: 1px solid var(--border-subtle); text-align: center;">
+      <div class="container-narrow">
+        <span class="badge-tag">EXCLUSIVE ACCESS</span>
+        <h2 style="font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4.5rem); text-transform: uppercase; margin-bottom: 1.25rem; letter-spacing: -0.04em;">
+          JOIN THE ADABEL ADIDAS-SPIRIT CLUB
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">
+          Receive priority invite to member-only drops, private archival sales, and backstage fashion runway access.
+        </p>
+        <form class="newsletter-form" style="max-width: 500px; margin: 0 auto;" id="home-newsletter">
+          <input type="email" required placeholder="ENTER YOUR EMAIL FOR 15% OFF" class="newsletter-input" aria-label="Email address for newsletter">
+          <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">
+              <span class="logo-bar"></span>
+              <span class="logo-bar"></span>
+              <span class="logo-bar"></span>
+            </div>
+            <span>ADABEL</span>
+          </a>
+          <p class="footer-brand-desc">
+            Adabel Stores is an avant-garde fashion design atelier inspired by athletic performance heritage, high streetwear, and structural tailoring.
+          </p>
+          <div style="display: flex; gap: 1rem;">
+            <span style="font-family: var(--font-sub); font-size: 0.8rem; color: var(--accent-electric); font-weight: 700;">// GERMANY</span>
+            <span style="font-family: var(--font-sub); font-size: 0.8rem; color: var(--accent-electric); font-weight: 700;">// NIGERIA</span>
+            <span style="font-family: var(--font-sub); font-size: 0.8rem; color: var(--accent-electric); font-weight: 700;">// UK</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">COLLECTIONS</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html?cat=Outerwear" class="footer-link">Technical Outerwear</a></li>
+            <li><a href="catalog.html?cat=Footwear" class="footer-link">Signature Footwear</a></li>
+            <li><a href="catalog.html?cat=Sweatshirts" class="footer-link">Heavyweight Hoodies</a></li>
+            <li><a href="catalog.html?cat=Bottoms" class="footer-link">Utility Cargo Bottoms</a></li>
+            <li><a href="catalog.html" class="footer-link">Archival Essentials</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home Showcase</a></li>
+            <li><a href="catalog.html" class="footer-link">Shop All Drops</a></li>
+            <li><a href="about.html" class="footer-link">Brand Philosophy &amp; Story</a></li>
+            <li><a href="about.html#contact-form" class="footer-link">Bespoke Design Inquiry</a></li>
+            <li><a href="about.html#sustainability" class="footer-link">Eco Materials</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">THE NEWSLETTER</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            First access to capsule collaborations and limited drops.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="YOUR EMAIL" required class="newsletter-input" aria-label="Footer newsletter email">
+            <button type="submit" class="newsletter-btn">JOIN</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ADABEL STORES LTD. ALL RIGHTS RESERVED.</div>
+        <div style="display: flex; gap: 2rem;">
+          <a href="#" style="color: var(--text-muted); text-decoration: none;">PRIVACY POLICY</a>
+          <a href="#" style="color: var(--text-muted); text-decoration: none;">TERMS OF SERVICE</a>
+          <a href="#" style="color: var(--text-muted); text-decoration: none;">COOKIE PREFERENCES</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal (HTML Dialog) -->
+  <dialog id="quick-view-modal" class="custom-dialog">
+    <button class="dialog-close" onclick="document.getElementById('quick-view-modal').close()" aria-label="Close dialog">&times;</button>
+    <div class="modal-body-content"></div>
+  </dialog>
+
+  <!-- Cart Drawer Overlay -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="if(event.target === this) toggleCart(false)">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title">
+          <span>SHOPPING BAG</span>
+          <span class="brand-stripes-mini" style="margin-left: 8px;"><span></span><span></span><span></span></span>
+        </div>
+        <button class="icon-btn" onclick="toggleCart(false)" aria-label="Close cart">&times;</button>
+      </div>
+
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div class="cart-subtotal-row">
+          <span>SUBTOTAL</span>
+          <span class="cart-subtotal-val" id="cart-subtotal-val">$0.00</span>
+        </div>
+        <button class="btn btn-accent" style="width: 100%; margin-bottom: 0.75rem;" onclick="showToast('Proceeding to checkout...'); toggleCart(false);">
+          CHECKOUT NOW &rarr;
+        </button>
+        <p style="font-size: 0.7rem; color: var(--text-muted); text-align: center;">
+          Complimentary carbon-neutral express shipping on this order.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    // Render first 4 products on the home page
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('home-products-grid');
+      if (container) {
+        const featured = PRODUCTS.slice(0, 4);
+        container.innerHTML = featured.map(p => `
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-tag ${p.isNew ? 'new' : ''}">${p.tag}</span>
+              <button class="product-favorite ${WishlistState.has(p.id) ? 'active' : ''}" data-fav-id="${p.id}" onclick="WishlistState.toggle('${p.id}')" aria-label="Save to Wishlist">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button>
+              <img src="${p.image}" alt="${p.name}" loading="lazy">
+            </div>
+            <div class="product-details">
+              <span class="product-category">${p.category} &bull; ${p.rating}</span>
+              <h3 class="product-title">${p.name}</h3>
+              <p class="product-desc">${p.description}</p>
+              <div class="product-price-row">
+                <div>
+                  <span class="product-price">$${p.price}</span>
+                  <span class="product-original-price">$${p.originalPrice}</span>
+                </div>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="cart.addItem('${p.id}')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  Add To Bag
+                </button>
+                <button class="btn-quick-view" onclick="openQuickView('${p.id}')" aria-label="Quick preview ${p.name}">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>
