@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ADABEL STORES &mdash; Engineered Fashion &amp; Streetwear</title>
   <meta name="description" content="Adabel Stores: High-performance fashion design inspired by architectural silhouettes and athletic heritage. Discover jackets, footwear, hoodies, and cargo designs.">
+  <meta name="color-scheme" content="dark light">
+  <script>
+    /* Resolve theme before first paint to avoid a flash */
+    (function () {
+      try {
+        var p = localStorage.getItem('adabel_theme_pref') || 'system';
+        var t = p === 'system' ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : p;
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -144,7 +155,7 @@
             <div class="hero-poster-overlay">
               <span class="badge-tag">SERIES 07 // AUTUMN</span>
               <div>
-                <p style="font-family: var(--font-sub); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-electric); margin-bottom: 0.25rem;">
+                <p style="font-family: var(--font-sub); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-text); margin-bottom: 0.25rem;">
                   Featured Silhouette
                 </p>
                 <h3 style="font-family: var(--font-display); font-size: 1.4rem; text-transform: uppercase; color: #fff;">
@@ -211,7 +222,7 @@
     </section>
 
     <!-- Lookbook Mosaic Showcase -->
-    <section class="section" style="background: #060608; border-top: 1px solid var(--border-subtle);">
+    <section class="section" style="background: var(--bg-band); border-top: 1px solid var(--border-subtle);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -221,7 +232,7 @@
               Captured on the streets of Berlin, Tokyo, and London. Style calibrated for motion and presence.
             </p>
           </div>
-          <span style="font-family: var(--font-sub); font-size: 0.85rem; color: var(--accent-electric); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
+          <span style="font-family: var(--font-sub); font-size: 0.85rem; color: var(--accent-text); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
             CAMPAIGN 2026
           </span>
         </div>
@@ -231,7 +242,7 @@
             <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80" alt="Editorial Fashion Trench">
             <div class="lookbook-caption">
               <div>
-                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-electric); text-transform: uppercase;">LOOK 01</span>
+                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-text); text-transform: uppercase;">LOOK 01</span>
                 <h3 class="lookbook-title">MONOCHROME UTILITY</h3>
               </div>
               <a href="catalog.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Explore</a>
@@ -241,7 +252,7 @@
             <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80" alt="Athletic Denim Streetwear">
             <div class="lookbook-caption">
               <div>
-                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-electric); text-transform: uppercase;">LOOK 02</span>
+                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-text); text-transform: uppercase;">LOOK 02</span>
                 <h3 class="lookbook-title">HEAVYWEIGHT DENIM &bull; CORE</h3>
               </div>
               <a href="catalog.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Explore</a>
@@ -251,7 +262,7 @@
             <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=900&q=80" alt="Athletic Footwear Culture">
             <div class="lookbook-caption">
               <div>
-                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-electric); text-transform: uppercase;">LOOK 03</span>
+                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-text); text-transform: uppercase;">LOOK 03</span>
                 <h3 class="lookbook-title">PAVEMENT RUNNERS</h3>
               </div>
               <a href="catalog.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Explore</a>
@@ -261,7 +272,7 @@
             <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80" alt="Model walking in tailored athletic coat">
             <div class="lookbook-caption">
               <div>
-                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-electric); text-transform: uppercase;">LOOK 04</span>
+                <span style="font-family: var(--font-sub); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent-text); text-transform: uppercase;">LOOK 04</span>
                 <h3 class="lookbook-title">ASYMMETRIC LINE DRAPING</h3>
               </div>
               <a href="catalog.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Explore</a>
@@ -272,7 +283,7 @@
     </section>
 
     <!-- Join the Club Banner -->
-    <section class="section" style="background: radial-gradient(circle at 50% 50%, #17171c 0%, #08080a 100%); border-top: 1px solid var(--border-subtle); text-align: center;">
+    <section class="section" style="background: var(--banner-radial); border-top: 1px solid var(--border-subtle); text-align: center;">
       <div class="container-narrow">
         <span class="badge-tag">EXCLUSIVE ACCESS</span>
         <h2 style="font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4.5rem); text-transform: uppercase; margin-bottom: 1.25rem; letter-spacing: -0.04em;">
@@ -306,9 +317,9 @@
             Adabel Stores is an avant-garde fashion design atelier inspired by athletic performance heritage, high streetwear, and structural tailoring.
           </p>
           <div style="display: flex; gap: 1rem;">
-            <span style="font-family: var(--font-sub); font-size: 0.8rem; color: var(--accent-electric); font-weight: 700;">// GERMANY</span>
-            <span style="font-family: var(--font-sub); font-size: 0.8rem; color: var(--accent-electric); font-weight: 700;">// NIGERIA</span>
-            <span style="font-family: var(--font-sub); font-size: 0.8rem; color: var(--accent-electric); font-weight: 700;">// UK</span>
+            <span style="font-family: var(--font-sub); font-size: 0.8rem; color: var(--accent-text); font-weight: 700;">// GERMANY</span>
+            <span style="font-family: var(--font-sub); font-size: 0.8rem; color: var(--accent-text); font-weight: 700;">// NIGERIA</span>
+            <span style="font-family: var(--font-sub); font-size: 0.8rem; color: var(--accent-text); font-weight: 700;">// UK</span>
           </div>
         </div>
 

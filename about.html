@@ -5,13 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BRAND STORY &amp; ATELIER &mdash; ADABEL STORES</title>
   <meta name="description" content="Discover the origins, athletic fashion ethos, and bespoke craftsmanship of Adabel Stores. Engineered silhouettes meets relentless cultural attitude.">
+  <meta name="color-scheme" content="dark light">
+  <script>
+    /* Resolve theme before first paint to avoid a flash */
+    (function () {
+      try {
+        var p = localStorage.getItem('adabel_theme_pref') || 'system';
+        var t = p === 'system' ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : p;
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
   <style>
     /* About Page Custom Layouts */
     .story-hero {
       position: relative;
       padding: 6.5rem 0 5rem;
-      background: radial-gradient(circle at 70% 30%, #17171e 0%, #060608 80%);
+      background: var(--hero-radial);
       border-bottom: 1px solid var(--border-subtle);
       overflow: hidden;
     }
@@ -36,7 +47,7 @@
       width: 14px;
       height: 14px;
       background: var(--accent-electric);
-      border: 3px solid #000;
+      border: 3px solid var(--bg-dark);
       border-radius: 50%;
     }
 
@@ -44,7 +55,7 @@
       font-family: var(--font-display);
       font-size: 1.6rem;
       font-weight: 900;
-      color: var(--accent-electric);
+      color: var(--accent-text);
       line-height: 1;
       margin-bottom: 0.5rem;
     }
@@ -70,7 +81,7 @@
       overflow: hidden;
       border: 1px solid var(--border-bold);
       aspect-ratio: 16 / 11;
-      background: #141417;
+      background: var(--media-bg);
     }
 
     .craft-image-frame img {
@@ -109,7 +120,7 @@
     }
 
     .stat-counter-number span {
-      color: var(--accent-electric);
+      color: var(--accent-text);
     }
 
     .stat-counter-label {
@@ -139,16 +150,16 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-bottom: 0.5rem;
-      color: #ffffff;
+      color: var(--text-primary);
     }
 
     .form-input,
     .form-textarea {
       width: 100%;
-      background: #111114;
+      background: var(--input-bg);
       border: 1px solid var(--border-bold);
       padding: 0.85rem 1.15rem;
-      color: #ffffff;
+      color: var(--text-primary);
       font-family: var(--font-body);
       font-size: 0.9rem;
       outline: none;
@@ -157,7 +168,7 @@
 
     .form-input:focus,
     .form-textarea:focus {
-      border-color: var(--accent-electric);
+      border-color: var(--accent-text);
     }
 
     @media (max-width: 900px) {
@@ -351,7 +362,7 @@
     </section>
 
     <!-- Brand Milestones Timeline -->
-    <section class="section" style="background: #09090c; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <section class="section" style="background: var(--bg-band); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
       <div class="container-narrow">
         <div class="section-head" style="border-bottom: none; margin-bottom: 1rem;">
           <div>
@@ -428,14 +439,14 @@
               Berlin &bull; London &bull; Lagos
             </p>
 
-            <h4 style="font-family: var(--font-sub); font-size: 0.85rem; text-transform: uppercase; color: var(--accent-electric); margin-bottom: 0.5rem;">
+            <h4 style="font-family: var(--font-sub); font-size: 0.85rem; text-transform: uppercase; color: var(--accent-text); margin-bottom: 0.5rem;">
               DIRECT ATELIER EMAIL
             </h4>
-            <p style="color: #ffffff; font-family: var(--font-sub); font-weight: 700; margin-bottom: 2rem;">
+            <p style="color: var(--text-primary); font-family: var(--font-sub); font-weight: 700; margin-bottom: 2rem;">
               studio@adabel-stores.design
             </p>
 
-            <h4 style="font-family: var(--font-sub); font-size: 0.85rem; text-transform: uppercase; color: var(--accent-electric); margin-bottom: 0.5rem;">
+            <h4 style="font-family: var(--font-sub); font-size: 0.85rem; text-transform: uppercase; color: var(--accent-text); margin-bottom: 0.5rem;">
               HOURS OF OPERATION
             </h4>
             <p style="color: var(--text-secondary); font-size: 0.9rem;">

@@ -306,31 +306,31 @@ function openQuickView(productId) {
   const content = modal.querySelector('.modal-body-content');
   content.innerHTML = `
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-      <div style="background: #18181b; overflow: hidden; border: 1px solid #27272a;">
+      <div style="background: var(--media-bg); overflow: hidden; border: 1px solid var(--border-subtle);">
         <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
       <div style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <div style="color: var(--accent-electric); font-family: var(--font-sub); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
+          <div style="color: var(--accent-text); font-family: var(--font-sub); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
             ${product.category} &bull; ${product.rating}
           </div>
           <h2 style="font-family: var(--font-display); font-size: 1.6rem; text-transform: uppercase; margin: 0.5rem 0 1rem; line-height: 1.1;">
             ${product.name}
           </h2>
           <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.25rem;">
-            <span style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: #fff;">$${product.price}</span>
+            <span style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--text-primary);">$${product.price}</span>
             <span style="font-size: 1rem; color: var(--text-muted); text-decoration: line-through;">$${product.originalPrice}</span>
           </div>
           <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
             ${product.description}
           </p>
           <div style="margin-bottom: 1.5rem;">
-            <label style="font-family: var(--font-sub); font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: #fff; display: block; margin-bottom: 0.5rem;">
+            <label style="font-family: var(--font-sub); font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 0.5rem;">
               Select Size
             </label>
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;" id="quick-view-sizes">
               ${product.sizes.map((s, idx) => `
-                <button type="button" class="btn-size ${idx === 0 ? 'selected' : ''}" data-size="${s}" onclick="selectModalSize(this)" style="background: ${idx === 0 ? '#fff' : '#18181b'}; color: ${idx === 0 ? '#000' : '#fff'}; border: 1px solid #333; padding: 0.5rem 1rem; font-family: var(--font-sub); font-weight: 700; cursor: pointer; text-transform: uppercase; font-size: 0.8rem;">
+                <button type="button" class="btn-size ${idx === 0 ? 'selected' : ''}" data-size="${s}" onclick="selectModalSize(this)">
                   ${s}
                 </button>
               `).join('')}
@@ -349,12 +349,8 @@ function openQuickView(productId) {
 
 function selectModalSize(btn) {
   document.querySelectorAll('#quick-view-sizes button').forEach(b => {
-    b.style.background = '#18181b';
-    b.style.color = '#fff';
     b.classList.remove('selected');
   });
-  btn.style.background = '#fff';
-  btn.style.color = '#000';
   btn.classList.add('selected');
 }
 
@@ -400,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (c.items.length === 0) {
         itemsList.innerHTML = `
           <div style="text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
-            <div style="font-family: var(--font-display); font-size: 1.4rem; text-transform: uppercase; margin-bottom: 0.5rem; color: #fff;">
+            <div style="font-family: var(--font-display); font-size: 1.4rem; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--text-primary);">
               Your Bag is Empty
             </div>
             <p style="font-size: 0.85rem; margin-bottom: 1.5rem;">Explore our new drop and elevate your wardrobe.</p>
@@ -418,10 +414,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
               <button onclick="cart.removeItem(${idx})" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.1rem;" title="Remove">&times;</button>
-              <div style="display: flex; align-items: center; border: 1px solid #333; background: #000;">
-                <button onclick="cart.updateQuantity(${idx}, ${item.quantity - 1})" style="background: none; border: none; color: #fff; width: 24px; height: 24px; cursor: pointer;">-</button>
+              <div style="display: flex; align-items: center; border: 1px solid var(--border-bold); background: var(--bg-surface);">
+                <button onclick="cart.updateQuantity(${idx}, ${item.quantity - 1})" style="background: none; border: none; color: var(--text-primary); width: 24px; height: 24px; cursor: pointer;">-</button>
                 <span style="font-size: 0.8rem; padding: 0 4px; min-width: 18px; text-align: center;">${item.quantity}</span>
-                <button onclick="cart.updateQuantity(${idx}, ${item.quantity + 1})" style="background: none; border: none; color: #fff; width: 24px; height: 24px; cursor: pointer;">+</button>
+                <button onclick="cart.updateQuantity(${idx}, ${item.quantity + 1})" style="background: none; border: none; color: var(--text-primary); width: 24px; height: 24px; cursor: pointer;">+</button>
               </div>
             </div>
           </div>

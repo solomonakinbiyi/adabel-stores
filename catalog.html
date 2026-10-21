@@ -5,11 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SHOP COLLECTION &mdash; ADABEL STORES</title>
   <meta name="description" content="Browse the full Adabel Stores clothing roster: Technical Outerwear, Streetwear Hoodies, Prime Footwear, and Utility Cargo Designs.">
+  <meta name="color-scheme" content="dark light">
+  <script>
+    /* Resolve theme before first paint to avoid a flash */
+    (function () {
+      try {
+        var p = localStorage.getItem('adabel_theme_pref') || 'system';
+        var t = p === 'system' ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : p;
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
   <style>
     /* Catalog Specific Custom Styles */
     .catalog-header {
-      background: radial-gradient(circle at 80% 20%, #1c1c22 0%, #08080a 75%);
+      background: var(--catalog-header-radial);
       padding: 4.5rem 0 3.5rem;
       border-bottom: 1px solid var(--border-subtle);
       position: relative;
@@ -34,7 +45,7 @@
     }
 
     .pill-btn {
-      background: #141416;
+      background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       color: var(--text-secondary);
       font-family: var(--font-sub);
@@ -49,15 +60,15 @@
 
     .pill-btn:hover,
     .pill-btn.active {
-      background: #ffffff;
-      color: #000000;
-      border-color: #ffffff;
+      background: var(--ink);
+      color: var(--ink-contrast);
+      border-color: var(--ink);
     }
 
     .sort-select {
-      background: #141416;
+      background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      color: #ffffff;
+      color: var(--text-primary);
       font-family: var(--font-sub);
       font-size: 0.8rem;
       font-weight: 600;
@@ -74,9 +85,9 @@
 
     .catalog-search-input {
       width: 100%;
-      background: #141416;
+      background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      color: #ffffff;
+      color: var(--text-primary);
       font-family: var(--font-body);
       font-size: 0.85rem;
       padding: 0.65rem 1rem 0.65rem 2.5rem;
@@ -85,7 +96,7 @@
     }
 
     .catalog-search-input:focus {
-      border-color: var(--accent-electric);
+      border-color: var(--accent-text);
     }
 
     .search-icon-pos {
@@ -245,7 +256,7 @@
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
           <span class="results-count" id="results-count">Showing 8 Items</span>
-          <span style="font-family: var(--font-sub); font-size: 0.75rem; color: var(--accent-electric); letter-spacing: 0.1em; text-transform: uppercase;">
+          <span style="font-family: var(--font-sub); font-size: 0.75rem; color: var(--accent-text); letter-spacing: 0.1em; text-transform: uppercase;">
             &bull; REAL-TIME INVENTORY
           </span>
         </div>
@@ -270,7 +281,7 @@
     </section>
 
     <!-- Sizing & Craft Guide Banner -->
-    <section class="section" style="background: #09090c; border-top: 1px solid var(--border-subtle);">
+    <section class="section" style="background: var(--bg-band); border-top: 1px solid var(--border-subtle);">
       <div class="container">
         <div class="section-head">
           <div>
@@ -283,19 +294,19 @@
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-          <div style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-electric);">
+          <div style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-line);">
             <h3 style="font-family: var(--font-sub); font-size: 1.15rem; text-transform: uppercase; margin-bottom: 0.75rem;">1. Athletic Drop</h3>
             <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
               Designed to mirror competitive athletes' silhouettes. Generous room in chest and upper arms with ergonomic articulated joint darts.
             </p>
           </div>
-          <div style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-subtle); border-left: 3px solid #ffffff;">
+          <div style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-subtle); border-left: 3px solid var(--text-primary);">
             <h3 style="font-family: var(--font-sub); font-size: 1.15rem; text-transform: uppercase; margin-bottom: 0.75rem;">2. Heavyweight Grammage</h3>
             <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
               Tees begin at 280 GSM, and hoodies strictly utilize 520 GSM loopback cotton for distinct structural drape that never collapses.
             </p>
           </div>
-          <div style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-electric);">
+          <div style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-line);">
             <h3 style="font-family: var(--font-sub); font-size: 1.15rem; text-transform: uppercase; margin-bottom: 0.75rem;">3. True-to-Size Or Oversize</h3>
             <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
               Order your standard size for the brand's intended sculpted streetwear look, or size down one notch for a classic tailored athletic profile.
