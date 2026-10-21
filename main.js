@@ -3,6 +3,72 @@
  * Adidas Aesthetics & Modern Web Functionality
  */
 
+// Theme Management System (dark / light / system)
+const ThemeManager = {
+  STORAGE_KEY: 'adabel_theme_pref',
+
+  getSavedTheme() {
+    return localStorage.getItem(this.STORAGE_KEY) || 'system';
+  },
+
+  getSystemTheme() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  },
+
+  applyTheme(pref) {
+    const root = document.documentElement;
+    if (pref === 'system') {
+      const resolved = this.getSystemTheme();
+      root.setAttribute('data-theme', resolved);
+      root.setAttribute('data-theme-mode', 'system');
+    } else {
+      root.setAttribute('data-theme', pref);
+      root.setAttribute('data-theme-mode', pref);
+    }
+
+    // Update active state on any theme switcher buttons on the page
+    document.querySelectorAll('.theme-opt-btn').forEach(btn => {
+      const mode = btn.getAttribute('data-theme-set');
+      btn.classList.toggle('active', mode === pref);
+      btn.setAttribute('aria-pressed', mode === pref ? 'true' : 'false');
+    });
+  },
+
+  setTheme(pref) {
+    localStorage.setItem(this.STORAGE_KEY, pref);
+    this.applyTheme(pref);
+    showToast(`Theme set to ${pref.toUpperCase()}`);
+  },
+
+  init() {
+    const current = this.getSavedTheme();
+    this.applyTheme(current);
+
+    // Listen to OS system color changes dynamically
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
+        if (this.getSavedTheme() === 'system') {
+          this.applyTheme('system');
+        }
+      });
+    }
+
+    // Bind all theme switcher buttons
+    document.querySelectorAll('.theme-opt-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTheme = btn.getAttribute('data-theme-set');
+        if (targetTheme) {
+          this.setTheme(targetTheme);
+        }
+      });
+    });
+  }
+};
+
+// Initialize theme immediately to prevent layout / color flash
+ThemeManager.applyTheme(ThemeManager.getSavedTheme());
+
+
 // Central Product State
 const PRODUCTS = [
   {
@@ -372,6 +438,9 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileNav.classList.toggle('active');
     });
   }
+
+  // Initialize Theme System
+  ThemeManager.init();
 
   // Newsletter Forms
   document.querySelectorAll('.newsletter-form').forEach(form => {

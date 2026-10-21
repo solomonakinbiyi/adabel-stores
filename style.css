@@ -10,12 +10,13 @@
   --font-sub: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Palette */
+  /* Default Dark Mode Palette */
   --bg-dark: #000000;
   --bg-primary: #0a0a0a;
   --bg-surface: #121212;
   --bg-card: #171717;
   --bg-elevated: #1e1e1e;
+  --header-bg: rgba(10, 10, 10, 0.88);
   
   --border-subtle: #262626;
   --border-bold: #3f3f46;
@@ -25,16 +26,105 @@
   --text-secondary: #a1a1aa;
   --text-muted: #71717a;
 
-  /* Accent: Electric performance neon lime / solar flare - signature adidas style accent */
+  /* Accent: Electric performance neon lime / solar flare */
   --accent-electric: #e0fe10;
   --accent-electric-glow: rgba(224, 254, 16, 0.35);
   --accent-cyan: #00f2fe;
   --accent-white: #ffffff;
 
   --adidas-stripe: rgba(255, 255, 255, 0.12);
+  --hero-radial: radial-gradient(circle at 75% 45%, #18181b 0%, #050505 70%);
+  --catalog-header-radial: radial-gradient(circle at 80% 20%, #1c1c22 0%, #08080a 75%);
+  --banner-radial: radial-gradient(circle at 50% 50%, #17171c 0%, #08080a 100%);
+  --dialog-bg: #0d0d0f;
+  --drawer-bg: #0c0c0e;
+  --drawer-footer-bg: #08080a;
+  --input-bg: #111114;
+  --quickview-preview-bg: #18181b;
+
+  --btn-primary-bg: #ffffff;
+  --btn-primary-color: #000000;
+  --btn-primary-border: #ffffff;
+
   --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Explicit Light Mode Palette (Ultra-Clean Architectural Adidas Minimalist) */
+[data-theme="light"] {
+  --bg-dark: #f8f8fa;
+  --bg-primary: #ffffff;
+  --bg-surface: #f0f0f3;
+  --bg-card: #ffffff;
+  --bg-elevated: #e6e6ea;
+  --header-bg: rgba(255, 255, 255, 0.92);
+
+  --border-subtle: #e2e2e8;
+  --border-bold: #cbd5e1;
+  --border-light: #262626;
+
+  --text-primary: #09090b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+
+  --accent-electric: #000000;
+  --accent-electric-glow: rgba(0, 0, 0, 0.2);
+  --accent-cyan: #0284c7;
+  --accent-white: #09090b;
+
+  --adidas-stripe: rgba(0, 0, 0, 0.08);
+  --hero-radial: radial-gradient(circle at 75% 45%, #f1f2f6 0%, #ffffff 75%);
+  --catalog-header-radial: radial-gradient(circle at 80% 20%, #f4f4f7 0%, #ffffff 80%);
+  --banner-radial: radial-gradient(circle at 50% 50%, #f5f5f7 0%, #eaebee 100%);
+  --dialog-bg: #ffffff;
+  --drawer-bg: #ffffff;
+  --drawer-footer-bg: #f8f8fa;
+  --input-bg: #f1f2f5;
+  --quickview-preview-bg: #f4f4f6;
+
+  --btn-primary-bg: #000000;
+  --btn-primary-color: #ffffff;
+  --btn-primary-border: #000000;
+}
+
+/* Respect OS preference when data-theme is "system" or not set */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg-dark: #f8f8fa;
+    --bg-primary: #ffffff;
+    --bg-surface: #f0f0f3;
+    --bg-card: #ffffff;
+    --bg-elevated: #e6e6ea;
+    --header-bg: rgba(255, 255, 255, 0.92);
+
+    --border-subtle: #e2e2e8;
+    --border-bold: #cbd5e1;
+    --border-light: #262626;
+
+    --text-primary: #09090b;
+    --text-secondary: #52525b;
+    --text-muted: #71717a;
+
+    --accent-electric: #000000;
+    --accent-electric-glow: rgba(0, 0, 0, 0.2);
+    --accent-cyan: #0284c7;
+    --accent-white: #09090b;
+
+    --adidas-stripe: rgba(0, 0, 0, 0.08);
+    --hero-radial: radial-gradient(circle at 75% 45%, #f1f2f6 0%, #ffffff 75%);
+    --catalog-header-radial: radial-gradient(circle at 80% 20%, #f4f4f7 0%, #ffffff 80%);
+    --banner-radial: radial-gradient(circle at 50% 50%, #f5f5f7 0%, #eaebee 100%);
+    --dialog-bg: #ffffff;
+    --drawer-bg: #ffffff;
+    --drawer-footer-bg: #f8f8fa;
+    --input-bg: #f1f2f5;
+    --quickview-preview-bg: #f4f4f6;
+
+    --btn-primary-bg: #000000;
+    --btn-primary-color: #ffffff;
+    --btn-primary-border: #000000;
+  }
 }
 
 *, *::before, *::after {
@@ -50,6 +140,7 @@ html {
   color: var(--text-primary);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -59,6 +150,7 @@ body {
   flex-direction: column;
   background: var(--bg-dark);
   line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Scrollbar */
@@ -279,6 +371,52 @@ body {
   background: var(--bg-surface);
   transform: translateY(-2px);
 }
+
+/* Theme Switcher (Dark / Light / System) */
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-bold);
+  padding: 3px;
+  gap: 2px;
+  position: relative;
+}
+
+.theme-opt-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+  font-family: var(--font-sub);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  gap: 4px;
+  transition: all var(--transition-fast);
+  color: var(--text-secondary);
+}
+
+.theme-opt-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.theme-opt-btn:hover {
+  color: var(--text-primary);
+}
+
+.theme-opt-btn.active {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
 .cart-badge {
   position: absolute;
   top: 4px;
@@ -986,8 +1124,8 @@ body {
 
 /* Modals & Drawers using native HTML Dialog */
 dialog.custom-dialog {
-  background: #0d0d0f;
-  color: #ffffff;
+  background: var(--dialog-bg);
+  color: var(--text-primary);
   border: 1px solid var(--border-bold);
   max-width: 600px;
   width: 90%;
@@ -1009,7 +1147,7 @@ dialog.custom-dialog::backdrop {
   right: 1.5rem;
   background: transparent;
   border: none;
-  color: #ffffff;
+  color: var(--text-primary);
   font-size: 1.5rem;
   cursor: pointer;
   width: 36px;
@@ -1047,7 +1185,7 @@ dialog.custom-dialog::backdrop {
   bottom: 0;
   width: 100%;
   max-width: 440px;
-  background: #0c0c0e;
+  background: var(--drawer-bg);
   border-left: 1px solid var(--border-bold);
   z-index: 2600;
   transform: translateX(100%);
